@@ -1,0 +1,106 @@
+{% extends "baseContent.html" %}
+{% import "_macros.html" as macros %}
+{% block title %}Game Plan{% endblock %}{% block page_content %}
+
+    <div class="container"> 
+     
+      <div class="row">
+          <div class="col-md-7 col-md-offset-1 para1">
+				<h2 class="hdr">Game Plan</h2>
+				<br />
+				<h3>So Far</h3>
+				<ul>
+				  <li id="phase1-01">Research best platform and framework for use on website
+				    <ul><li>In my opinion, Python is a good dev platform for the site since most platforms do either backend or web display while Python is good for both purposes.  This will become especially important when integrating the schools database and CRM pieces of the site</li>
+				    <li>After reviewing several frameworks, I think Flask offers the most flexibility and power for the goals of the site. To prove this out took several hours of research but this will prove out in the end.</li>
+				    <li>An important consideration is that Python is an established language of almost 20 years (before there was a real web to program for).  Though Flask is only a few years old it is one of the 3 top frameworks in use with Python.</li>
+				    <li>The actual web display framework, Bootstrap is not only being used throughout the web but is also very customizable.  In a next iteration of these sample pages I plan on coding in the ability to change to a few different themes to demonstrate the flexibility of the framework without much work.  <li>
+				    </ul>
+
+				  </li>
+				  <li id="phase1-02">Navigation Menu
+				    <ul>
+				      <li>Determined the Navigation Menu categories will be 
+				            Home, About Us, Services, Testimonials, FAQ and Contact.</li>
+				      <li>Once a parent or student has authenticated (in the crm version), new menu category items will be available to them.
+				      <li>I have added a new admin category to hold pages for creating blog posts.  None of these pages will be displayed to the average user.</li>
+				      <li>The example Navigation Menu is purposely sparse as there isn't much point in making it pretty until the design direction is set.</li>
+				    </ul>
+				  </li>
+				  <li id="phase1-03">Fonts
+				    <ul>
+				      <li>On each page, there is now a combo box allowing the change of a display element.  There are further style enhancements that can be made to the fonts but this is a good starting point.</li>
+				      <li>I realize it takes a few seconds when the pages load, and when an element is changed by one of the combo boxes.  This will not happen once we code the fonts into the page.</li>
+				    </ul>
+				  </li>
+				  <li id="phase1-04">Social Media
+				    <ul>
+				      <li>I have established a developer account with Twitter and Facebook to allow the importing of the EdFirst feed (when there is one) into the pages.  Currently the Facebook feed isn't working but I will hammer that out by the next time we meet.</li>
+				      <li>Under the Admin item, there is a blog & social media page link.</li>
+				      <li>When the post button is clicked, the social media entry boxes will be displayed with prepopulated text based on the blog posting. .</li>
+				      <li>My thought was (since the size is limited to 140 characters) that a pre-populated twitter entry would be created from the blog entry title, the bitly shorted url to the page, and a hashtag(s).</li>
+				      <li>The prepopulated facebook and googleplus entries would be 75% of the blog post (I still need to make the entry cut off only after a period) along with the bitly url to the post on our site and the hashtag for GooglePlus (I will research if  hashtags are accepted in Facebook)</li>
+				      <li>Obviously at this point nothing will actually happen upon clicking any of the post buttons</li>
+				    </ul>
+				  </li>
+				  <li id="phase1-05">Database
+				    <ul>
+				      <li>Because of the need to maintain data to be used by the CRM, I don't think that a nosql (text) database will meet our needs.  </li>
+				      <li>One of the best parts of the Flask framework is the ability to connect to almost any open and closed source database type.  This affords much more flexibility for selection of an Internet Server Provider (as long as they support Python)</li>
+				      <li>If written correctly, the database connections should work with very little to no modifications if the database engine is changed or modifications is made to the existing database.</li>
+				      <li>The way database modifications are scripted, modified data elements can be rolled-back fairly easily</li>
+				      <li>I have created a database that is pretty close to what will be needed for the capturing of logins, authentication, requests for more information, storage of blog and social media postings, and expansion in the future.  I have tried my best to name the tables and fields in common sense terms of sufficient length that any programmer should be able to interpret the code. </li>
+				    </ul>
+
+				  </li>
+				  <li id="phase1-06">Web Page Coding
+				      <ul>
+				        <li>The actual web code is being written to adhere to current programming standards.</li>
+				        <li>Though the code eventually gets compiled into machine language, I will ensure there will be plain english versions of the code.</li>
+				        <li></li>
+				      </ul>
+				  </li>
+
+				</ul>
+				<h3>
+				Next Steps
+				</h3>
+
+				<ul>
+				    <li>Testing the code so far in other browsers including phone and tablets.  I expect to complete that this weekend.</li>
+				    <li>Finalize what information will need to be captured by the request for information forms.  There is quite a variation in what was being captured by the current forms but I have tried to cover all bases (cRequestInformation.html and RequestInformation.html ).  Obviously there will need to be some variations between them (asking for Tofel scores) but that can be coded to ensure database insertions are done without errors.  I will leave that up to you whether the current example forms are asking for enough input from the user.</li>
+				    <li>Several areas on the form I would like to utilize combo boxes for standardization of things like country and state.  I will also want to add more validations of the data once entered to ensure that for example based on the country which is selected the correct phone format is enforced.  This will not only keep out spam replies but also the validity of the data in the database.  These validators will need to be updated throughout the development process but the basics of requiring an entry in a field, assuring that the entry is long enough or not too long can be done within two days once we have established the requirements for the fields.</li>
+				    <li>Hooking up those dynamic combo boxes and form fields to the database will take more time but should take less than a week.  Much of that will be more testing to ensure that all the requirements are being met.</li>
+				    <li>Integrating the content will probably be the easiest part for me.  Once the design is completed we can integrate the code in easily.  Part of the CRM design should allow for the easier updating of that content in the future.  for instance, the contact email address should be a database field which then populates each page rather that requiring a page edit for that type of change.
+				</ul>
+				<h3>Beyond That</h3>
+				<ul>
+				  <li>Social Media and Blog Posting.  Working with the Application Programming Interfaces for each social media application will take reseach.  They are written because they want developers to link with them so it behooves them to document the interface completely and they have forums if you run into a problem.</li>
+				  <li>Translate Social Media Content.  Once the code is written to save a blog entry I will write a page showing all the untranslated blog posts.  A post will be selected and the page will show the post with a window where the translation could be completed.  Just as in the original post, they would be able to then do social media posts.  Naturally you would be able to provide an English version of something an associate wrote in the same manner.</li>
+				  <li>Depending on what they are needed for your forms and questionaires could (behind the paywall) be available for download with a method for upload OR filled out online.  This information would then be used in the Student/Parent registration required pages.</li>
+				  <li>All information that could be used in identity theft would be encrypted (I wouldmuch rather err on the side of caution).  We could require a strong password requiring a combination of letters, numbers and special characters.  Personally I would suggest adding links to Password Managers like LastPass or keePass and strongly request they use different passwords for each school site they visit.</li>
+</ul>
+          </div> <!-- col-md-7 -->
+          <div class="col-md-3 col-md-offset-1">
+            <div id="selects" >
+                <!-- this is where the font and size boxes will go -->
+            </div>  <!-- selects -->
+            <div id="tweety">
+                <a class="twitter-timeline"  href="https://twitter.com/zennioptical"  data-widget-id="447870491118673920">Tweets by @zennioptical</a>
+            </div> <!-- tweety  -->
+          </div> <!-- col-md3 -->
+      </div>  <!-- row -->
+
+    </div> <!-- /container -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
+ 
+
+
+
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  {{ moment.include_moment() }}
+{% endblock %}

@@ -1,0 +1,153 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Education First{% endblock %}
+
+{% block head %}
+{{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+<link href="http://fonts.googleapis.com/css?family=Ubuntu:400,700" rel="stylesheet" type="text/css" id="contentFont">
+    <style>
+      body { padding-bottom: 70px; }
+    </style>
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('main.about') }}">
+                Admission Advisors
+            </a>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+               <li class="active">
+                    <a href="{{ url_for('main.ehome') }}">Home</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ url_for('main.about') }}">Company</a></li>
+                      <li><a href="{{ url_for('main.about') }}">Our Values</a></li>
+                      <li><a href="{{ url_for('main.about') }}">People</a></li>
+                      <li><a href="{{ url_for('main.about') }}">Eric Rosenberger</a></li>
+                      <li><a href="{{ url_for('main.about') }}">The EdFirst Advantage</a></li>
+                    </ul>
+                  </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ url_for('main.pil') }}">Parent's Information Letter</a></li>
+                              <li><a href="{{ url_for('main.approach') }}">Our Approach</a></li>
+                              <li><a href="{{ url_for('main.adenviro') }}">Today's Admission Environment</a></li>
+                              <li><a href="{{ url_for('main.placement') }}">Placement Services</a></li>
+                              <li><a href="{{ url_for('main.info') }}">Request Information</a></li>
+                      
+                      <li><a href="#">Colleges</a></li>
+                      <li><a href="#">Test Prep</a></li>
+                      <li class="divider">Tours</li>
+                      <li><a href="#">Summer Programs</a></li>
+                      <li><a href="#">Camp</a></li>
+                      <li class="dropdown-header">Request Information</li>
+                      <ul>
+                        <li><a href="{{ url_for('main.info') }}">English</a>
+                        <li><a href="{{ url_for('main.cinfo') }}">Chinese</a>
+                      </ul>
+                      <li><a href="{{ url_for('main.cinfo') }}">International Counseling</a></li>
+                      
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Testimonials<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ url_for('main.testimonial') }}">Schools</a></li>
+                      <li><a href="{{ url_for('main.testimonial') }}">College</a></li>
+                    </ul>
+                  </li>
+
+                   <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">F.A.Q.<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ url_for('main.about') }}">Schools</a></li>
+                      <li><a href="{{ url_for('main.about') }}">Colleges</a></li>
+                      <li><a href="{{ url_for('main.about') }}">Tours</a></li>
+                      <li><a href="{{ url_for('main.about') }}">Guardian Services</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="{{ url_for('main.contact') }}">Contact</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="{{ url_for('main.blogentry') }}">
+                        Blog & Social Media Post
+                      </a></li>
+                      <li><a href="{{ url_for('main.secretstuff') }}">Secret Stuff</a>
+                      <li><a href="{{ url_for('main.gameplan') }}">Game Plan</a></li>
+                    </ul>
+                  </li>
+
+
+
+                {% if current_user.is_authenticated() %}
+                <li><a href="{{ url_for('main.user', username=current_user.username) }}">Profile</a></li>
+                {% else %}
+
+                {% endif %}
+
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% if current_user.is_authenticated() %}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="{{ current_user.gravatar(size=18) }}">
+                        Account <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('auth.change_password') }}">Change Password</a></li>
+                        <li><a href="{{ url_for('auth.change_email_request') }}">Change Email</a></li>
+                        <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+                    </ul>
+                </li>
+                {% else %}
+                <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{ message }}
+    </div>
+    {% endfor %}
+
+    {% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+<script>
+$(document).ready(function(){
+  $("#selects").load('/static/selects.html')
+})
+</script>
+
+<script src="{{ url_for('static', filename='edfirst.js') }}">
+{% endblock %}

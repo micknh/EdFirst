@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Relationships</title>
+	<style>
+		body {font-size:16px;font-family:"verdana";}
+		.keyword {font-size:+2px;}
+		.pink{ color:pink;background-color:black;}
+		.red{ color:red;}
+		.green{ color:green;}
+		.blue{ color:blue;}
+		.purple{ color:purple;}
+		.gold{ color:gold;}
+		.orange{ color:orange;}
+		.yellow{ color:yellow;background-color:purple;}
+		.gold{ color:gold;}
+		.lime{color:lime;}
+	</style>
+</head>
+<body>
+	<h2>Relationships in SQLAlchemy</h2>
+	First we build the tables <br>
+	<div id="UserTable">
+class <span class="purple">User</span>(Base): <br>
+	__tablename__ = 'users' <br>
+
+	id = Column(Integer, Sequence('user_id_seq')  <br>,primary_key=True) <br>
+	name = Column(String(50)) <br>
+	fullname = Column(String(50)) <br>
+	password = Column(String(12)) <br /><br />
+
+	def __repr__(self): <br>
+		return "<span class="purple">User</span>(name='%s', fullname='%s', password='%s')> <br>" % (self.name, self.fullname, self.password) <br>
+	</div>
+
+	<div id="AddressTable"><br />
+		class <span class="purple">Address</span>(Base):<br />
+	__tablename__ = 'Addresses'<br />
+	id = Column(Integer, primary_key=True)<br />
+	email_address = Column(String, nullable=False)<br />
+	user_id = Column(Integer, ForeignKey('users.id'))<br />
+	user = relationship("User", backref=backref('addresses', order_by=id))<br />
+	def __repr__(self):<br />
+		return "<Address(email_address=%s)>" % self.email_address<br />
+<br />
+	</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+{% block title %}New Blog Post{% endblock %}
+{% block page_content %}
+<form method=post action="/blog">
+    {{blog_form.hidden_tag()}}
+  <dl>
+    {{ macros.render_field(blog_form.title_field) }}
+    {{ macros.render_field(blog_form.post_field) }}
+    {{ macros.render_field(blog_form.trandate_field) }}
+    {{ macros.render_field(blog_form.active_field) }}
+    {{ macros.render_field(blog_form.author_select_field) }}
+
+  </dl>
+  <p><input type=submit value=Post>
+</form>
+{% endblock %}
+
+

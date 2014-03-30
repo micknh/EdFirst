@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+
+{% block title %}Post Created Successfully{% endblock %}
+{% block page_content %}
+<h1> This data was saved to the database! </h1>
+<form method=post action="/">
+    {{blog_form.hidden_tag()}}
+  <dl>
+	{{ render_field(blog_form.title_field) }}
+    {{ render_field(blog_form.post_field) }}
+    {{ render_field(blog_form.author_select_field) }}
+    {{ render_field(blog_form.language_select_field) }}
+    {{ render_field(blog_form.trandate_field) }}
+    {{ render_field(blog_form.active_field) }}
+  </dl>
+  <p><input type=submit value=Register>
+</form>
+{% endblock %}
+
+

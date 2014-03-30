@@ -1,0 +1,205 @@
+{% extends "baseContent.html" %}
+{% import "_macros.html" as macros %}
+{% block title %}Home{% endblock %}
+{% block page_content %}
+   
+    <div class="container-fluid" role="main">
+     
+        <div class="row">
+          <div class="col-md-7 col-md-offset-1 para1">
+            <h2 class="hdr">Boarding School Placement // Request For Information</h2>
+              <form action="" class="form" role="form">
+                <div class="form-group" id="contact">
+                  <label for="cmbTitle">学生信息</label>
+                  <select name="title" class="form-control">
+                      <option value="男">男</option>
+                      <option value="女">女</option>
+                  </select>
+
+                  <label for="txtName">地址</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtName" 
+                          placeholder="地址">
+
+                   <label for="txtEmail">出生日期</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtEmail" 
+                          placeholder="出生日期">
+                </div>
+                <div class="form-group" id="student">
+                   <label for="txtStudentName">Student 地址</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentName" 
+                          placeholder="Student 地址">
+                  <label for="txtGender">Student 邮箱</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtGender" 
+                          placeholder="Student 邮箱">
+                  <label for="txtStudentAddress">Student 微信</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentAddress" 
+                          placeholder="Student 微信">
+                  <label for="txtStudentAddr2">Student 微信2</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentAddr2" 
+                          placeholder="Student 微信2">
+                  <label for="txtStudentAddr3">Student 微信3</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentAddr3" 
+                          placeholder="Student 微信3">
+                  <label for="txtAddr4">Student 微信4</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentAddr4" 
+                          placeholder="Student 微信4">
+                  <label for="txtStudentEmail">Student 出生日期</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentEmail" 
+                          placeholder="Student 出生日期">
+                  <label for="txtStudentPhone">Student 在读年级</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentPhone" 
+                          placeholder="Student 在读年级">
+                  <label for="txtSAT1">SAT1分数</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtSAT1" 
+                          placeholder="SAT分数">
+                  <label for="txtSAT2">SAT2分数</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtSAT2" 
+                          placeholder="SAT2分数">
+                  <label for="txtTOFEL">TOFEL分数</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtTOFEL" 
+                          placeholder="TOFEL分数">
+                  <label for="cmbCurrentGrade">Current Grade</label>
+                  <select class="fom-control" id="cmbCurrentGrade">
+                    <option value="0">Select a grade</option>
+                    <option value="7th">7th</option>
+                    <option value="8th">8th</option>
+                    <option value="9th">9th</option>
+                    <option value="10th">10th</option>
+                    <option value="11th">11th</option>
+                    <option value="12th">12th</option>
+                    <option value="College - Freshman">College - Freshman</option>
+                    <option value="College - Sophomore">College - Sophomore</option>
+                    <option value="College - Junior">College - Junior</option>
+                    <option value="College - Senior">College - Senior</option>
+                    <option value="Post Graduate">Post Graduate</option>
+                    <option value="Other">
+                      Other (Please specify in comments)
+                    </option>
+                  </select>
+                  <br clear="all"> <br clear="all">                  
+                  <label for="cmbCurrentGrade">Applying for Grade</label>
+                  <select class="fom-control" id="cmbApplyingForGrade">
+                    <option value="0">Select a grade</option>
+                    <option value="9th">9th</option>
+                    <option value="10th">10th</option>
+                    <option value="11th">11th</option>
+                    <option value="12th">12th</option>
+                    <option value="College - Freshman">College - Freshman</option>
+                    <option value="College - Sophomore">College - Sophomore</option>
+                    <option value="College - Junior">College - Junior</option>
+                    <option value="College - Senior">College - Senior</option>
+                    <option value="Post Graduate">Post Graduate</option>
+                    <option value="Other">
+                      Other (Please specify in comments)
+                    </option>
+                  </select>
+                  <br clear="all">
+                  <textarea id="taSpecialTalents" rows="3" cols="50" 
+                  class="form-control">
+                  Please list any SpecialTalents
+                  </textarea>
+                  <br clear="all"> <br clear="all"> 
+
+
+                  <textarea id="taComments" rows="3" cols="50"
+                  class="form-control">
+                  Comments
+                </textarea>                
+                <br clear="all"> <br clear="all"> 
+
+                </div>
+                <div class="form-group" id="parent">
+                   <label for="txtParentName">Parent 地址</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentName" 
+                          placeholder="Parent 地址">
+                  <label for="txtParentAddress">Parent 微信</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentAddress" 
+                          placeholder="Parent 微信">
+                  <label for="txtParentAddr2">Parent 微信2</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentAddr2" 
+                          placeholder="Parent 微信2">
+                  <label for="txtParentAddr3">Parent 微信3</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentAddr3" 
+                          placeholder="Parent 微信3">
+                  <label for="txtAddr4">Parent 微信4</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentAddr4" 
+                          placeholder="Parent 微信4">
+                  <label for="txtCompany">计划赴美时间</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtCompany" 
+                          placeholder="计划赴美时间">
+                  <label for="txtParentEmail">Parent 出生日期</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentEmail" 
+                          placeholder="Parent 出生日期">
+                  <label for="txtParentPhone">Parent 在读年级</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentPhone" 
+                          placeholder="Parent 在读年级">
+                </div>
+
+                <button id="sendForm" class="btn btn-success" value="Send" >
+                Send
+                </button>
+              </form>
+
+
+          </div>
+          <div class="col-md-3 col-md-offset-1">
+            <div id="selects" >
+                <!-- this is where the font and size boxes will go -->
+            </div>
+            <div id="tweety">
+                <a class="twitter-timeline"  href="https://twitter.com/zennioptical"  data-widget-id="447870491118673920">Tweets by @zennioptical</a>
+            </div>
+          </div>
+        </div>
+
+    </div> <!-- /container -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+ {% endblock %}
+
+ {% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+
+{% endblock %}

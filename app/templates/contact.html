@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+
+{% block title %}Flasky - Contact{% endblock %}
+
+{% block page_content %}
+<div class="container">
+	<div>
+		<label for="firstName" class="label_control">	
+			First Name
+		</label>
+		<div class="form_control" id="firstName">
+			{{ contact.fn }}
+		</div>
+	</div>
+	<div>
+		<label for="lastName" class="label_control">	
+			Last Name
+		</label>
+		<div class="form_control" id="lastName">
+			{{ contact.ln }}
+		</div>
+	</div>
+	<div>
+		<label for="country" class="label_control">	
+			Country
+		</label>
+		<div class="form_control" id="country">
+			{{ contact.country }}
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

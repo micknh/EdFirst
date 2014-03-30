@@ -1,0 +1,44 @@
+{% extends "baseContent.html" %}
+{% import "_macros.html" as macros %}
+{% block title %}Contact Us{% endblock %}{% block page_content %}
+
+    <div class="container"> 
+     
+      <div class="row">
+          <div class="col-md-7 col-md-offset-1 para1">
+				<h2>Contact Us</h2>
+        <p>EducationFirst!</p>
+
+				Eric Rosenberger M.Ed.<br />
+				29 Auburn St.<br />
+				Concord, NH 03301<br />
+				Telephone: 603-223-9933<br />
+				Fax: 603-225-6842<br />
+				Email: <a href="er@admissionadvisors.com">er@admissionadvisors.com</a><br />
+				Web: <a href="www.admissionadvisors.com">www.admissionadvisors.com</a><br />
+				<br />
+				<p>Please let me know how I can help.</p>
+          </div> <!-- col-md-7 -->
+          <div class="col-md-3 col-md-offset-1">
+            <div id="selects" >
+                <!-- this is where the font and size boxes will go -->
+            </div>  <!-- selects -->
+            <div id="tweety">
+                <a class="twitter-timeline"  href="https://twitter.com/zennioptical"  data-widget-id="447870491118673920">Tweets by @zennioptical</a>
+            </div> <!-- tweety  -->
+          </div> <!-- col-md3 -->
+      </div>  <!-- row -->
+
+    </div> <!-- /container -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
+ 
+
+
+
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  {{ moment.include_moment() }}
+{% endblock %}

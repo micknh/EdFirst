@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+
+{% block title %}New Language{% endblock %}
+{% block page_content %}
+<form method=post action="/add-language" class="form">
+  <label>Language</label><input type='text' id="language" name="language" />
+  <p><input type=submit value=Insert>
+</form>
+{% endblock %}
+
+

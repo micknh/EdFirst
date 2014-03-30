@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+
+{% block title %}New Relation Type{% endblock %}
+{% block page_content %}
+<form method=post action="/add-relationType" class="form">
+  <label>Relation Type</label><input type='text' id="relationType" name="relationType" />
+  <p><input type=submit value=Insert>
+</form>
+{% endblock %}
+
+

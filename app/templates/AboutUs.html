@@ -1,0 +1,40 @@
+{% extends "baseContent.html" %}
+{% import "_macros.html" as macros %}
+{% block title %}Home{% endblock %}
+{% block page_content %}
+
+    <div class="container"> 
+     
+      <div class="row">
+          <div class="col-md-7 col-md-offset-1 para1">
+              <h2 class="hdr">About Us</h2>
+              <p>EducationFirst! was founded by Eric Rosenberger to provide boarding school, college placement and athletic recruiting services for families from throughout the United States and from many foreign countries. Mr. Rosenberger believes that all students have special talents, and focuses on placing students in educational environments that will nurture each student to reach his/her full potential.</p>
+
+              <p>A graduate of St. Mark's School, Harvard University, and the Boston College Graduate School of Education, Eric Rosenberger has served on the faculty at Avon Old Farms School in Avon, Connecticut, and at St. Paul's School in Concord, New Hampshire. He is married and has three children who have attended Deerfield Academy, St. Mark's School, Cornell University, Colorado College and Harvard University. He is active on many school, college and community committees and boards.</p>
+
+              <p>Eric Rosenberger has spent the past thirty years working with young people. He specializes in counseling students during the admissions process to boarding schools and colleges, and advising students during the college athletic recruiting process. He visits many schools and colleges each year, keeps current on changes, and maintains personal relationships at these institutions. </p>
+          </div>
+          <div class="col-md-3 col-md-offset-1">
+            <div id="selects" >
+                <!-- this is where the font and size boxes will go -->
+            </div>
+            <div id="tweety">
+                <a class="twitter-timeline"  href="https://twitter.com/zennioptical"  data-widget-id="447870491118673920">Tweets by @zennioptical</a>
+            </div>
+          </div>
+      </div>
+
+    </div> <!-- /container -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
+ 
+
+
+
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  {{ moment.include_moment() }}
+{% endblock %}
+

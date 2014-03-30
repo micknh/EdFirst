@@ -1,0 +1,177 @@
+{% extends "baseContent.html" %}
+{% import "_macros.html" as macros %}
+{% block title %}Home{% endblock %}
+{% block page_content %}
+
+    <div class="container"></div>    
+     
+        <div class="row">
+          <div class="col-md-7 col-md-offset-1 para1">
+            <h2 class="hdr">Boarding School Placement // Request For Information</h2>
+              <form action="" class="form" role="form">
+                <div class="form-group" id="contact">
+                  <label for="txtName">Name</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtName" 
+                          placeholder="Name">
+
+                   <label for="txtName">Email</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtEmail" 
+                          placeholder="Email">
+                </div>
+                <div class="form-group" id="student">
+                   <label for="txtStudentName">Student Name</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentName" 
+                          placeholder="StudentName">
+                  <label for="txtStudentAddress">Student Address</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentAddress" 
+                          placeholder="StudentAddress">
+                  <label for="txtStudentCity">Student City</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentCity" 
+                          placeholder="StudentCity">
+                  <label for="txtStudentState">Student State</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentState" 
+                          placeholder="StudentState">
+                  <label for="txtStudentZip">Student Zip</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentZip" 
+                          placeholder="StudentZip">
+                  <label for="txtStudentEmail">Student Email</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentEmail" 
+                          placeholder="StudentEmail">
+                  <label for="txtStudentPhone">Student Phone</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtStudentPhone" 
+                          placeholder="StudentPhone">
+                  <label for="cmbCurrentGrade">Current Grade</label>
+                  <select class="fom-control" id="cmbCurrentGrade">
+                    <option value="0">Select a grade</option>
+                    <option value="7th">7th</option>
+                    <option value="8th">8th</option>
+                    <option value="9th">9th</option>
+                    <option value="10th">10th</option>
+                    <option value="11th">11th</option>
+                    <option value="12th">12th</option>
+                    <option value="College - Freshman">College - Freshman</option>
+                    <option value="College - Sophomore">College - Sophomore</option>
+                    <option value="College - Junior">College - Junior</option>
+                    <option value="College - Senior">College - Senior</option>
+                    <option value="Post Graduate">Post Graduate</option>
+                    <option value="Other">
+                      Other (Please specify in comments)
+                    </option>
+                  </select>
+                  <br clear="all"> <br clear="all">                  
+                  <label for="cmbCurrentGrade">Applying for Grade</label>
+                  <select class="fom-control" id="cmbApplyingForGrade">
+                    <option value="0">Select a grade</option>
+                    <option value="9th">9th</option>
+                    <option value="10th">10th</option>
+                    <option value="11th">11th</option>
+                    <option value="12th">12th</option>
+                    <option value="College - Freshman">College - Freshman</option>
+                    <option value="College - Sophomore">College - Sophomore</option>
+                    <option value="College - Junior">College - Junior</option>
+                    <option value="College - Senior">College - Senior</option>
+                    <option value="Post Graduate">Post Graduate</option>
+                    <option value="Other">
+                      Other (Please specify in comments)
+                    </option>
+                  </select>
+                  <br clear="all">
+                  <textarea id="taSpecialTalents" rows="3" cols="50" 
+                  class="form-control">
+                  Please list any SpecialTalents
+                  </textarea>
+                  <br clear="all"> <br clear="all"> 
+
+
+                  <textarea id="taComments" rows="3" cols="50"
+                  class="form-control">
+                  Comments
+                </textarea>                
+                <br clear="all"> <br clear="all"> 
+                </div>
+                <div class="form-group" id="parent">
+                   <label for="txtParentName">Parent Name</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentName" 
+                          placeholder="ParentName">
+                  <label for="txtParentAddress">Parent Address</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentAddress" 
+                          placeholder="ParentAddress">
+                  <label for="txtParentCity">Parent City</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentCity" 
+                          placeholder="ParentCity">
+                  <label for="txtParentState">Parent State</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentState" 
+                          placeholder="ParentState">
+                  <label for="txtParentZip">Parent Zip</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentZip" 
+                          placeholder="ParentZip">
+                  <label for="txtParentEmail">Parent Email</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentEmail" 
+                          placeholder="ParentEmail">
+                  <label for="txtParentPhone">Parent Phone</label>
+                  <input type="text" 
+                          class="form-control" 
+                          id="txtParentPhone" 
+                          placeholder="ParentPhone">
+                </div>
+                <button id="sendForm" class="btn btn-success" value="Send">
+                Send
+                </button>
+              </form>
+
+
+          </div>
+          <div class="col-md-3 col-md-offset-1">
+            <div id="selects" >
+                <!-- this is where the font and size boxes will go -->
+            </div>
+            <div id="tweety">
+                <a class="twitter-timeline"  href="https://twitter.com/zennioptical"  data-widget-id="447870491118673920">Tweets by @zennioptical</a>
+            </div>
+          </div>
+        </div>
+
+    </div> <!-- /container -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
+ 
+
+
+
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  {{ moment.include_moment() }}
+{% endblock %}
+

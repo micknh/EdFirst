@@ -1,0 +1,53 @@
+{% extends "baseContent.html" %}
+{% import "_macros.html" as macros %}
+{% block title %}Home{% endblock %}
+{% block page_content %}
+    <div class="container-fluid" role="main">
+        <div class="row">
+          <div class="col-md-7 col-md-offset-1 para1">
+              <h2 class="para1">Parents Information Letter</h2>
+
+              <p>Dear Parents,</p>
+
+              <p class="para1">As an <strong>Independent Educational Consultant</strong>, my goal is to help place your child at a boarding school that is the right fit for his/her individual interests, skills and aspirations. I work with average students, with students who have exceptional academic, ATHLETIC or artistic talents, and with students who are applying for a Post Graduate year.</p>
+
+              <p>At EducationFirst!, I provide the knowledge, strategy, organization and scheduling for applicants and their families to consider all possibilities, select appropriate schools, and make sound decisions. I focus on helping to place each student in a school where the student will be challenged in and out of the classroom, will find a series of personal successes and will mature and reach his/her potential.
+              </p>
+              <p class="para1">I begin with a meeting or telephone discussion with parents and with the student. Prior to this meeting, please send me our completed <href="#" class="lnk">Parent and Student Questionnaires</a>, copies of all testing, the latest school transcript, <i>a list of athletic and extracurricular activities</i> and achievements, both at school and away from school, and all prizes and awards.
+              </p>
+              <p>After reviewing this material, I analyze past performance in and out of the classroom, compare it with individual ability, and develop a profile of each applicant. If a student has exceptional athletic, artistic or extracurricular talents, I provide a realistic evaluation of these skills and suggest options for the next level of participation. I recommend initiatives, if necessary, to maximize strengths and improve weaknesses. I develop a personal admissions plan with a strategy, theme and schedule for each student, a list of schools which meet the ability, skills and dreams of each student, advise students on how to prepare for SSAT tests, school visits and interviews, and help students with their applications and essays.</p>
+
+              <p>The fee or annual retainer is payable in advance, and covers up to eight one-on-one meetings, and unlimited communications by email and telephone. Travel time is charged by the hour. Expenses such as overnight delivery, telephone, fax, and travel are billed monthly. As an independent educational consultant, I have no financial relationships with any schools and fees are paid by parents. I naturally do not guarantee admission to any specific institutions.
+              </p>
+              <p>Please contact me for additional information.<br />
+              Sincerely,<br />
+              EducationFirst!</p>
+
+              <p>Eric Rosenberger, M. Ed.<br />
+              Educational Consultant<br />
+              er@admissionadvisors.com</p>
+
+          </div>  <!-- class="col-md-7 col-md-offset-1 para1" -- >
+          <div class="col-md-3 col-md-offset-1">
+            <div id="selects" >
+                <!-- this is where the font and size boxes will go -->
+            </div>
+            <div id="tweety">
+                <a class="twitter-timeline"  href="https://twitter.com/zennioptical"  data-widget-id="447870491118673920">Tweets by @zennioptical</a>
+            </div>
+          </div>
+        </div> <!-- row -->
+    </div> <!-- /container -->
+   <script>
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
+
+
+
+
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  {{ moment.include_moment() }}
+{% endblock %}

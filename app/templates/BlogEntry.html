@@ -1,0 +1,121 @@
+{% extends "baseContent.html" %}
+{% import "_macros.html" as macros %}
+{% block title %}Blog Post{% endblock %}{% block page_content %}
+
+    <div class="container"> 
+     
+      <div class="row">
+          <div class="col-md-7 col-md-offset-1 para1">
+				<form action="" class="form" role="form">
+        <div class="form-group blogpost">
+            <label for="txtTitle">Post Title</label>
+            <input type="text" class="form-control" id="txtTitle" placeholder="Enter Post Title">
+        </div>
+       <div class="form-group blogpost">
+            <label for="post">Post</label>
+            <textarea class="form-control" id="post" placeholder="Enter post" cols="60" rows=7></textarea>
+        </div>
+        <div class="form-group blogpost">
+            <label for="post_date">Posting Date</label>
+            <input type="text" class="form-control" id="post_date" placeholder="yyyy-mm-dd" />
+        </div>
+       <button type="button" class="btn btn-success blogpost" id="btnPost">Post</button>
+
+    </form>
+    <br><br>
+    <div class="divSocialMedia">
+        <div class="form-group socialmedia hidden" >
+            <label for="bitly">Bitly</label>
+            <input type="text" 
+            class="form-control" 
+            id="bitly" 
+            placeholder="Bitly URL"
+            value="http://154lu.bitly.org" />
+        </div>
+        <div class="form-group socialmedia hidden">
+            <label for="tweet">Tweet</label>
+            <input type="text" class="form-control" id="tweet" placeholder="tweet" />
+            <button id="postTweet" value="Post" class="btn btn-success">Post</button>
+           <!--  <input type="text" class="hashtag" id="hashtag" placeholder="hashtag" /> -->
+        </div>
+        <div class="form-group socialmedia hidden">
+            <label for="Facebook">Facebook</label>
+            <textarea class="form-control" id="Facebook" placeholder="Enter Facebook" cols="60" rows=2></textarea>
+            <button id="postFacebook" value="Post" class="btn btn-success">Post</button>
+        </div>
+        <div class="form-group socialmedia hidden">
+            <label for="GooglePlus">GooglePlus</label>
+            <textarea class="form-control" id="GooglePlus" placeholder="Enter GooglePlus" cols="60" rows=2></textarea>
+            <button id="postGooglePlus" value="Post" class="btn btn-success">Post</button>
+        </div>
+    </div>
+          </div> <!-- col-md-7 -->
+          <div class="col-md-3 col-md-offset-1">
+            <div id="selects" >
+                <!-- this is where the font and size boxes will go -->
+            </div>  <!-- selects -->
+            <div id="tweety">
+                <a class="twitter-timeline"  href="https://twitter.com/zennioptical"  data-widget-id="447870491118673920">Tweets by @zennioptical</a>
+            </div> <!-- tweety  -->
+          </div> <!-- col-md3 -->
+      </div>  <!-- row -->
+
+    </div> <!-- /container -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
+ 
+
+
+
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  {{ moment.include_moment() }}
+  <script>
+  	 $(document.body).on('blur', "#txtTitle",function(e) {
+        if(this.value.length > 115) {
+          alert('Depending on the number of keywords, there is a good chance the post will require more than one tweet')
+        } 
+      })
+      $(document.body).on('click', '#btnPost', function(e){
+        $title = $("#txtTitle").val()
+        $post = $("#post").val()
+        $twit = $title.substring(0,115)
+        $bitly = $('#bitly').val().substring(0,25).trim()
+        $bitlyLink = '<a href="' + $bitly + '">' + $bitly + '</a>'
+        $hashtag = '#Education1st' //+ $("#hashtag").val()
+        $tweet = $twit+ ' ' + $bitly + ' ' + $hashtag
+        $len = parseInt($post.length * .75)
+        $gplus = $post.substring(0,$len) +' ' + $bitlyLink + ' ' + $hashtag
+        $fb = $post.substring(0,$len) + $bitlyLink
+        $("#Facebook").val($fb).text($fb)
+        $("#GooglePlus").val($gplus).text($gplus)
+        $("#tweet").val($tweet)
+        $(".socialmedia")
+        .removeClass('hidden');
+        $(".blogpost")
+        .addClass('hidden');
+      })
+      $(document.body).on('click', '#postTweet', function(e){
+      	var msg = 'Your tweet\n\n'
+      	msg += $('#tweet').val() + '\n\n'
+      	msg += 'will be posted on ' + $('#post_date')
+      	alert(msg)
+      })
+
+      $(document.body).on('click', '#postFacebook', function(e){
+      	var msg = 'Your Facebook post\n\n'
+      	msg += $('#Facebook').val() + '\n\n'
+      	msg += 'will be posted on ' + $('#post_date')
+      	alert(msg)
+      })
+
+      $(document.body).on('click', '#postGooglePlus', function(e){
+      	var msg = 'Your Google+ post\n\n'
+      	msg += $('#GooglePlus').val() + '\n\n'
+      	msg += 'will be posted on ' + $('#post_date')
+      	alert(msg)
+      })
+  </script>
+{% endblock %}
